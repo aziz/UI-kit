@@ -1,0 +1,63 @@
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $(".edit-browser-support input[type='checkbox']").click(function(){
+      $(this).parent()
+             .find('input[type="checkbox"]:checked').parent()
+             .find("input[type='text']").removeAttr( "disabled" ).parent()
+             .find("input[type='hidden']").remove(); 
+
+      $(this).parent()
+             .find('input[type="checkbox"]:not(:checked)').parent()
+             .find("input[type='text']").attr( "disabled","disabled" ).val("")
+             .after($("<input type='hidden' name='"  + $(this).parent().find("input[type='text']").attr("name")  + "' value='' />"));             
+    });
+  });
+</script>
+
+<% form_for(@component) do |f| %>
+<div class="east-content">
+  <h2><%= f.text_field :title, :class => "ui-textbox" %></h2>
+
+  <label for="category" class="side left-align">Category:</label>
+  <%= f.select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }, { :include_blank => true }) %>
+
+
+  <h3>Browser Support:</h3>
+  <div class="edit-browser-support">
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.firefox.blank? %> / >
+      <b>Firefox:</b>
+    <%= f.text_field :firefox, (@component.firefox.blank?) ? { :disabled => "disabled" } : {}   %>
+    </p>
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.safari.blank? %>  / >
+      <b>Safari:</b>
+    <%= f.text_field :safari, (@component.safari.blank?) ? { :disabled => "disabled" } : {} %>
+    </p>
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.webkit.blank? %>  / >
+      <b>Webkit:</b>
+    <%= f.text_field :webkit, (@component.webkit.blank?) ? { :disabled => "disabled" } : {}  %>
+    </p>
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.opera.blank? %>  / >
+      <b>Opera:</b>
+    <%= f.text_field :opera, (@component.opera.blank?) ? { :disabled => "disabled" } : {}  %>
+    </p>
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.ie.blank? %> / >
+      <b>IE:</b>
+    <%= f.text_field :ie, (@component.ie.blank?) ? { :disabled => "disabled" } : {}  %>
+    </p>
+    <p>
+      <input type="checkbox" value="" <%= 'checked="checked"' unless @component.chrome.blank? %>  / >
+      <b>Chrome:</b>
+    <%= f.text_field :chrome, (@component.chrome.blank?) ? { :disabled => "disbled" } : {}  %>
+    </p>
+  </div>
+  
+  <label for="notes" class="top">Notes</label>
+  <%= f.text_area :notes, :class => "ui-textarea" %>
+  <%= f.submit 'Update Info', :class => "btn-mac"  %>    
+</div>
+<% end %>

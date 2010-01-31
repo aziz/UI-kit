@@ -1,0 +1,43 @@
+<p>
+  <b>Parent:</b>
+  <%=h @category.parent_id %>
+</p>
+
+<p>
+  <b>Children count:</b>
+  <%=h @category.children_count %>
+</p>
+
+<p>
+  <b>Ancestors count:</b>
+  <%=h @category.ancestors_count %>
+</p>
+
+<p>
+  <b>Descendants count:</b>
+  <%=h @category.descendants_count %>
+</p>
+
+<p>
+  <b>Hidden:</b>
+  <%=h @category.hidden %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @category.position %>
+</p>
+
+<p>
+  <b>Components count:</b>
+  <%=h @category.components_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

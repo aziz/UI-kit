@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  html: MyText
+  css: MyText
+  javascript: MyText
+  category_id: 1
+  notes: MyText
+  firefox: MyString
+  safari: MyString
+  webkit: MyString
+  opera: MyString
+  ie: MyString
+  chrome: MyString
+
+two:
+  title: MyString
+  html: MyText
+  css: MyText
+  javascript: MyText
+  category_id: 1
+  notes: MyText
+  firefox: MyString
+  safari: MyString
+  webkit: MyString
+  opera: MyString
+  ie: MyString
+  chrome: MyString

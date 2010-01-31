@@ -1,0 +1,38 @@
+/* BACKGROUND */
+.tree-apple .ltr, .tree-apple .rtl { margin-left:0; margin-right:0; display:block;padding:0 0 0 10px; }
+.tree-apple .ltr > li.leaf, .tree-apple .rtl > li.leaf { background-image:none; }
+
+.tree li  { padding:0 0 0 10px !important; }
+.tree li  a { min-height:20px !important; }
+.tree ul ins {position: relative; top:3px;}
+
+/* LOCKED */
+.tree-apple .locked li a { color:gray; }
+/* DOTS */
+.tree-apple ul { background-position:6px 1px; background-repeat:repeat-y; background-image:url(data:image/gif;base64,R0lGODlhAgACAIAAAB4dGf///yH5BAEAAAEALAAAAAACAAIAAAICRF4AOw==); _background-image:url("dot_for_ie.gif"); *background-image:url("dot_for_ie.gif"); }
+.tree-apple li { background-repeat:no-repeat; background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACH0lEQVR42qVSTWhTQRCe2RdjqEdz8FQEPSj0YFCqGLAppAHxYBGhaapV0LT+9aTGquCxePHUq1qb0FARsehBYmpjKAp66cWjB/Gm4q0oTd7OOPt2X/osBQXfezO7b36++XZmEf7zwUDv7htI9abPRh0rH94+gk/N+j8BpAq35s6P5gtmz854vzxfXalOjfwVYO/gxFQymcxkjxzeibjueL387rOtgBGq6/8kpb5++97EvnN3GndvX80AswvRgMoD8hna5IOxtwmgxRpYM2giIFkB43BvetoClK4UM6x9ByDRoIDIAqDEakILQAZARBMotVWOWW5i+szN+uXiWBaxLWmWqyGjRRkQ+UQkmVHE2kSLLQGzlZlFPHR6snbxwlhO+WuA0gRzEAMQhAkZDI7AQbLxWQB5VQLKsw/r2DtyozZeHM+x/1OibYMCAFMNXMUOoN0HfZQjVCozr/BA4XpteLSYi9Mv4M4QXTVDX2iYzpNjAE5r1QVP5x7UcX+hVD85dCqruBVxwx9VwyHanY0gFYeFJ9VFTA2XGkdP5DMerXVmDBwFkq7L6kWvHksTvQS8fPa4ifvypUb/MQHgVUlSdogSRBrsVDwLFnMMjChRfqwLlp7PC8DQtaX0wGD/FloFcgRdEctH2aSQQejXsW2wXFt4g3uOX3qhSW031shN3vThDRsP6Qd29xzs/vLxfcsVCUVtEHZXNBTTFr1jV0/8N9ftHlyo7PRXAAAAAElFTkSuQmCC"); }
+/* NO DOTS */
+.tree-apple .no_dots, .tree-apple .no_dots ul { background:transparent; }
+.tree-apple .no_dots li.leaf { background-image:none; background-color:transparent; }
+/* OPEN or CLOSED */
+.tree-apple li.open { background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAALCAYAAACtWacbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKdJREFUeNpi+f//PwMuwMjICKHxKYIBlqK6/i1A2huPmq1MydH+r4DG/sdh3X+QPJO2ulKbvrbaM2yKQOIgeSYg+46bg/kMVlaWv8gKQHxnW5OZIHmQIgYJMeEpVqZ6d5AVgfjSkmJTQWwmqNgHNweLNl4erh8gDogG8YHMd8iKGDg52Jc5WptcALFBNIgPNxYUTkjYecX6XY9ANLI4uiIQTkcXAwgwABSuYNNVaY0XAAAAAElFTkSuQmCC") 0px 6px no-repeat; }
+.tree-apple li.closed, #jstree-dragged.tree-apple li li.open { background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAALCAYAAACtWacbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAL1JREFUeNpi/P//PwMIMDIygmkYHxmwFNX1bwfSxUDJaww4ABMQewDxJaDiaUAshE0RY2FtH9x8oI2fgLY1AplT+poKfyGbBAdABXxAqheIbwNNjcKqCAnIAfFSoMLJYIdjU8HLw/XD1d7ivo25/m0MRaysLH+tTPUfeThanGNnZ5sOFNoLVwQMo/96WqrPfd1tbwgJ8M0HCq0G4p9w3RNnr3j78PHzE8BwAoWVECgw0TGI6ARieWySMAwQYAA+g2nZsxy5/QAAAABJRU5ErkJggg==") 0px 6px no-repeat; }
+#jstree-marker { background-image:url("icons.png"); }
+/* DEFAULT, HOVER, CLICKED, LOADING STATES */
+.tree-apple li a, .tree-apple li span { border-radius        :2px;-moz-border-radius   :2px;-webkit-border-radius:2px; }
+.tree-apple li a:hover, .tree-apple li a.hover, .tree-apple li span { /*background: #a2b1cf; border:1px solid #6f82a9;*/ padding:0px 3px 0px 3px;background-color:rgba(162,177,207,0.4);border: 1px solid rgba(145,160,192,0.6); }
+.tree-apple li a.clicked, .tree-apple li a.clicked:hover, .tree-apple li span.clicked { background: #beebff; border:1px solid #99defd; padding:0px 3px 0px 3px; }
+/* ICONS */
+.tree-apple ins { background-image:url("icons.png"); background-position:0 0; background-repeat:no-repeat; }
+.tree-apple ul li a.loading ins { background-image:url("throbber.gif") !important; background-position:0 0 !important; } /* UL is added to make selector stronger */
+.tree-apple li a ins.forbidden { background-position:-16px -16px; }
+.tree-apple .locked li a ins { background-position:0 -48px; }
+.tree-apple li span ins { background-position:-16px 0; }
+#jstree-dragged.tree-apple ins { background:url("icons.png") -16px -32px no-repeat; }
+#jstree-dragged.tree-apple ins.forbidden { background:url("icons.png") -16px -16px no-repeat; }
+
+/* CONTEXT MENU */
+.tree-apple-context a ins { background-image:url("icons.png"); background-repeat:no-repeat; background-position:-64px -64px; }
+.tree-apple-context a ins.create { background-position:0 -16px; }
+.tree-apple-context a ins.rename { background-position:-16px 0px; }
+.tree-apple-context a ins.remove { background-position:0 -32px; }

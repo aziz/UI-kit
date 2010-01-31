@@ -1,0 +1,30 @@
+<% form_for(@component) do |f| %>
+  <%= f.error_messages %>
+
+  
+  <div class="btn-edit">
+    <%= f.submit 'Save', :class => "btn-mac"  %>
+    <%= link_to 'Delete', component_path(@component), :confirm => 'Are you sure?', :method => :delete, :class => "btn-mac" %>
+  </div>  
+  <div id="tabs" >
+    <ul class="btn-bar-mac">
+      <li><a href="#tabs-2" class="ui-tabs-selected">HTML</a></li>
+      <li><a href="#tabs-3">CSS</a></li>
+      <li><a href="#tabs-4">Javascript</a></li>
+    </ul>
+    <div id="tabs-2">
+      <%= f.text_area :html, :class => "ui-layout-content", :size => nil  %>
+    </div>
+    <div id="tabs-3">
+      <%= f.text_area :css, :class => "ui-layout-content" %>
+    </div>
+    <div id="tabs-4">
+      <%= f.text_area :javascript, :class => "ui-layout-content" %>
+    </div>
+  </div>
+
+<% content_for :east do %>
+  <%= render :partial => 'edit_info_pane' %>
+<% end %>
+
+<% end %>

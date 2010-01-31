@@ -1,0 +1,28 @@
+<% content_for :east do %>
+  <%= render :partial => 'info_pane' %>
+<% end %>
+
+<div class="btn-edit">
+  <%= link_to 'Edit', edit_component_path(@component), :class => "btn-mac" %>
+  <%= link_to 'Delete', component_path(@component), :confirm => 'Are you sure?', :method => :delete, :class => "btn-mac" %>
+</div>
+<div id="tabs" >
+	<ul class="btn-bar-mac">
+		<li><a href="#tabs-1">Preview</a></li>
+		<li><a href="#tabs-2">HTML</a></li>
+		<li><a href="#tabs-3">CSS</a></li>
+		<li><a href="#tabs-4">Javascript</a></li>	
+	</ul>
+	<div id="tabs-1">
+    <iframe width="100%" height="100%" class="ui-layout-content iframe-prev" src="<%= preview_component_path(@component) %>"></iframe>	
+  </div>
+	<div id="tabs-2">
+      <pre><code><%=h @component.html %></code></pre>
+  </div>
+	<div id="tabs-3">
+      <pre><code><%=h @component.css %></code></pre>
+	</div>
+  <div id="tabs-4">
+        <pre><code><%=h @component.javascript  %></code></pre>
+  </div>
+</div>

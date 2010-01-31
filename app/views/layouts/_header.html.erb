@@ -1,0 +1,13 @@
+<ul class="btngroup-mac" style="float:left">
+  <li class="btn-mac home"><%= link_to '<span class="title">Home</span>', root_path %></li>
+  <li class="btn-mac new-cat"><%= link_to '<span class="title">New Category </span>', new_category_path %></li>
+  <li class="btn-mac new-com"><%= link_to '<span class="title">New Component</span>', new_component_path %></li>  
+</ul>
+
+<ul class="btngroup-mac" style="float:right">
+  <!-- 
+  <li class="btn-mac"><%= link_to '<span class="title">Components</span>', old_index_components_path %></li>
+  <li class="btn-mac"><%= link_to '<span class="title">Categories</span>', categories_path %></li>   
+  -->
+  <li class="btn-mac selected"><%= link_to '<span class="title">Info Pane</span>', "#", :class => 'info-pane-toggle'  %></li>    
+</ul>

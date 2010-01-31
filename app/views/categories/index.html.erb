@@ -1,0 +1,30 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent</th>
+    <th># of Components</th>    
+    <th>Position</th>    
+    <th># of Children</th>
+    <th># of Ancestors</th>
+    <th># of Descendants</th>
+    <th>Hidden</th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%=h category.name %></td>
+    <td><%=h category.parent_id %></td>
+    <td><%=h category.components_count %></td>
+    <td><%=h category.position %></td>    
+    <td><%=h category.children_count %></td>
+    <td><%=h category.ancestors_count %></td>
+    <td><%=h category.descendants_count %></td>
+    <td><%=h category.hidden %></td>
+    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

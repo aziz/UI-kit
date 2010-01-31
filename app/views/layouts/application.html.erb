@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>UIKIT: <%= controller.action_name %> <%= controller.controller_name %></title>
+  <%= stylesheet_link_tag 'gui' , 'application','/themes/base/ui.all.css', '/themes/tree/apple/style.css', 'ui-override'  %>
+  <%= javascript_include_tag "jquery-1.4.1.min.js", "jquery-ui-1.8rc1.min.js" , 
+                             "jquery.layout-1.2.0.min.js", "jquery.tree.min.js" , 
+                             "plugins/jquery.tree.contextmenu.js" , "application.js",  :cache => true %>
+</head>
+<body>
+<p style="color: green"><%= flash[:notice] %></p>
+<div class="ui-layout-north btn-bar-mac">
+  <%= render :partial => '/layouts/header' %>
+</div>
+<div class="ui-layout-west">
+<div class="sidebar ui-layout-content">
+    <div class="nav-list">
+      <ul>
+        <li><span class="title">Library</span></li>
+      </ul>
+    </div>
+    <div id="tree">
+      <ul>
+        <% for category in Category.all do %>
+      	<li id="phtml_<%= category.id %>" class="<%= (@component && @component.category_id == category.id) ? "open" : "closed" %>" rel="folder">
+      	  <a href="#"><ins> </ins><%= category.name %></a>
+      	  <% if category.components_count && category.components_count > 0  %>
+      		<ul>
+      		  <% for item in category.components %>
+      			<li id="phtml_c<%= category.id %>_i<%= item.id %>" rel="file">
+      			  <a href="<%= component_path(item) %>" class="<%= "clicked" if @component && item.id == @component.id %>"><ins> </ins><%= item.title %></a>
+      			</li>
+      			<% end %>
+      		</ul>
+      		<% end %>
+      	</li>
+      	<% end %>
+      	<% for item in Component.find(:all, :conditions => { :category_id => nil } ) do  %>
+  			<li id="phtml_c0_i<%= item.id %>" rel="file">
+  			  <a href="<%= component_path(item) %>" class="<%= "clicked" if @component && item.id == @component.id %>"><ins> </ins><%= item.title %></a>
+  			</li>      	
+      	<% end %>
+      </ul>
+    </div>    
+</div>
+
+</div>
+
+<div class="ui-layout-center">
+<%= yield %>
+</div>
+
+<div class="ui-layout-east">
+<%= yield(:east) %>
+</div>
+<!-- <div class="ui-layout-south">
+</div> -->
+
+<div id="new-component" style="display:none">
+  <% @new_component = Component.new() %>
+  <% form_for(@new_component) do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <label>Category</label>  
+      <%= f.select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }, { :include_blank => true }) %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+</div>
+
+<div id="new-category" style="display:none">
+  <% @new_category = Category.new() %>  
+  <% form_for(@new_category) do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>  
+</div>
+
+</body>
+</html>

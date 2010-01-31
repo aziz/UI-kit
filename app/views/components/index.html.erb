@@ -1,0 +1,34 @@
+<script type="text/javascript" charset="utf-8">
+  bodytag = $('body');
+  if ($.browser.webkit) {  bodytag.addClass("webkit"); }
+  if ($.browser.mozilla) {  bodytag.addClass("mozilla"); }
+  if ($.browser.msie) {  bodytag.addClass("msie"); }
+  if ($.browser.opera) {  bodytag.addClass("opera"); }
+</script>
+
+<div class="browser mozilla">Browser: <strong>Firefox</strong></div>
+<div class="browser webkit">Browser: <strong>Webkit</strong></div>
+<div class="browser msie">Browser: <strong>Internet Explorer</strong></div>
+<div class="browser opera">Browser: <strong>Opera</strong></div>  
+
+<p>You have <%= @components.size %> components.</p>
+<p><a href="#" class="new-com">Create a new component</a></p>
+<h2>Recent Components</h2>
+<ul>
+<% for com in @components  do %>
+  <li><%= link_to com.title, component_path(com) %></li>
+<% end %>
+</ul>
+
+<% content_for :east do %>
+<div class="des">
+  <p>Recomended process</p>
+  <ol>
+      <li> embed images</li>
+      <li> make internal style tag for css</li>
+      <li> include javascript is the div box, add extra js here.</li>    
+      <li> manage it in blog style. newer content on the top, but keep this one the top forever.</li>
+      <li> use dash in class name instead of underscore</li>      
+  </ol>
+</div>
+<% end %>

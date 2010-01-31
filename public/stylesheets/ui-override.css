@@ -1,0 +1,11 @@
+.ui-tabs {padding: 0;}
+.ui-tabs.ui-widget-content, .ui-tabs .ui-widget-header {  border:0;}
+.ui-tabs .ui-tabs-nav li {  top:4px;}
+.ui-tabs .ui-tabs-nav {  padding-left:5px;}
+.ui-tabs .ui-tabs-panel {  padding:0;}
+.ui-tabs.ui-corner-all, .ui-tabs-nav.ui-corner-all {
+  border-radius        :0px;
+  -moz-border-radius   :0px;
+  -webkit-border-radius:0px;
+}
+

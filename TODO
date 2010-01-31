@@ -1,0 +1,40 @@
+
+
+Features:
+- gradients
+- download
+
+BUG: 
+- Move it to heroku
+- add index to tables
+
+LAYOUT:
+- full size iframe
+- bad close and open panes
+- bad resize
+
+TREE:
+- selected state
+- dbclick open folder
+- replace all css with inline images
+- move / rename / delete
+- context menu 
+- shortcuts keyboard
+
+INFO PANEL:
+- info pane button in the topbar
+
+========================================================
+Style: 
+- index page
+- sheet dialogs
+- top toolbar icons
+
+
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.checkbox.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.cookie.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.hotkeys.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.metadata.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.themeroller.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.xml_flat.js"></script>
+<script type="text/javascript" src="/javascripts/plugins/jquery.tree.xml_nested.js"></script>                             
