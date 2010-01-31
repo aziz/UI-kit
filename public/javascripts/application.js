@@ -2,14 +2,16 @@
 $(function(){
 
 // -------- Layout ---------------------------------------------------------------------------
-var mainLayout = $('body').layout({ 
-  defaults:{ fxName: "slide",  fxSpeed: "slow",  
-             spacing_open: 1, spacing_closed: 0, scrollToBookmarkOnLoad: true , enableCursorHotkey: true },
+function resize_iframe() { 
+  $("iframe").css("height",  $('.ui-layout-center').height() - $("#tabs .ui-tabs-nav").height() - 3 );  
+}
+mainLayout = $('body').layout({ 
+  defaults:{ fxName: "none",  fxSpeed: "slow", spacing_open: 1, spacing_closed: 0, enableCursorHotkey: true },
   north: { resizable: false, size: 32, spacing_open: 0},
-  west:  { minSize: 140, maxSize: 450,  size: 200, closable: false },
+  west:  { minSize: 140, maxSize: 450,  size: 200, closable: true },
   east:  { minSize: 140, maxSize: 450,  size: 200, closable: true },
   // south: { resizable: false, size: 33, spacing_open: 0 },  
-  center:{ }
+  center:{ onresize: resize_iframe }
 });
 
 $('.info-pane-toggle').click(function(){
