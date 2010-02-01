@@ -20,24 +20,31 @@
 <!-- </div> -->
 
 <div id="tabs-2" class="ui-layout-center">
-<pre><code><%=h @component.html %></code></pre>
+<pre class="sh_html"><%=h @component.html %></pre>
 </div>
 
 <div id="tabs-3" class="ui-layout-center">
-<pre><code><%=h @component.css %></code></pre>
+<pre class="sh_css"><%=h @component.css %></pre>
 </div>
 
 <div id="tabs-4" class="ui-layout-center">
-<pre><code><%=h @component.javascript  %></code></pre>
+<pre class="sh_javascript"><%=h @component.javascript  %></pre>
 </div>
 
 </div>
 
+<%= javascript_include_tag "sh_main.min.js", "syntax-highlight-lang/sh_html.min.js", 
+                            "syntax-highlight-lang/sh_css.min.js", "syntax-highlight-lang/sh_javascript.min.js",:cache => true %>
 <script type="text/javascript" charset="utf-8">
   $(function(){
       // $("iframe").css("height",  $('.ui-layout-center').height() - $("#tabs .ui-tabs-nav").height() - 3 );  
       $("#tabs").layout({ 
         north: { resizable: false, size: 35, spacing_open: 0, closable: false} 
       });
+      sh_highlightDocument();
   });
 </script>
+<style type="text/css" media="screen">
+  @import "/stylesheets/sh_style.css";
+  @import "/themes/syntax-highlight/sh_darkblue.min.css";
+</style>
